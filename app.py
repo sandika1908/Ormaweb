@@ -1,7 +1,5 @@
 from flask import Flask, render_template, url_for, redirect, flash, session, jsonify
 from flask import request
-from flask_mysqldb import MySQL, MySQLdb
-import bcrypt
 import mysql.connector
 import werkzeug
 import urllib.request, json 
