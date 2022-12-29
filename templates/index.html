@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ormaweb - Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='assets/img/ormaweb.png')}}" rel="icon">
+  <link href="{{url_for('static', filename='assets/img/ormaweb.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='assets/css/main.css')}}" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="{{url_for('static', filename='assets/img/logoooo.png')}}" alt="">
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          
+          <li><a href="#hero">Beranda</a></li>
+          <li><a href="#blog  ">Ormawa</a></li>
+          <li><a href="#portfolio">Galeri</a></li>
+          <li><a href="#contact">Kontak</a></li>
+          <li><button class="btn btn-danger"><a href="{{url_for('login')}}">Login</a></button></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2>Selamat Datang di <span>Ormaweb</span></h2>
+          <p>Ormaweb merupakan aplikasi berbasis website, yang bertujuan menjadi pusat informasi kegiatan mahasiswa PNJ</p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#about" class="btn-get-started">Mulai</a>
+            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Nonton Video</span></a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="{{url_for('static', filename='assets/img/cobabg.png')}}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-boxes position-relative">
+      <div class="container position-relative">
+        <div class="row gy-4 mt-5">
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-table"></i></div>
+              <h4 class="title"><a href="#blog" class="stretched-link">Daftar Ormawa</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-person"></i></div>
+              <h4 class="title"><a href="#blog" class="stretched-link">Tentang Ormawa</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-images"></i></div>
+              <h4 class="title"><a href="#portfolio" class="stretched-link">Galeri</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-trophy-fill"></i></div>
+              <h4 class="title"><a href="#" class="stretched-link">Prestasi</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <!-- ======= Daftar Ormawa Section ======= -->
+  <section id="blog" class="recent-posts sections-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2 class="mt-5">Daftar Ormawa</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae iure nulla quasi dolorem tempore sapiente perferendis, ab optio labore quo?</p>
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-xl-4 col-md-6">
+          <article>
+            <div class="post-img text-center">
+              <img src="{{url_for('static', filename='assets/img/poros.png')}}" alt="" class="img-fluid">
+            </div>
+            <h2 class="title">
+              <a href="blog-details.html">Poros FM</a>
+            </h2>
+            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
+            <a href="">Selengkapnya</a>
+          </article>
+        </div><!-- End post list item --> 
+
+        <div class="col-xl-4 col-md-6">
+          <article>
+            <div class="post-img text-center">
+              <img src="{{url_for('static', filename='assets/img/pcc2.jpg')}}" alt="" class="img-fluid">
+            </div>
+            <h2 class="title">
+              <a href="blog-details.html">Polytechnic Chess Club</a>
+            </h2>
+            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
+            <a href="">Selengkapnya</a>
+          </article>
+        </div><!-- End post list item -->
+
+        <div class="col-xl-4 col-md-6">
+          <article>
+            <div class="post-img text-center">
+              <img src="{{url_for('static', filename='assets/img/polvoc2.jpg')}}" alt="" class="img-fluid">
+            </div>
+            <h2 class="title">
+              <a href="blog-details.html">Polvoc</a>
+            </h2>
+            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
+            <a href="">Selengkapnya</a>
+          </article>
+        </div><!-- End post list item -->
+
+        <div class="col-xl-4 col-md-6">
+          <article>
+            <div class="post-img text-center">
+              <img src="{{url_for('static', filename='assets/img/forsei2.jpg')}}" alt="" class="img-fluid">
+            </div>
+            <h2 class="title">
+              <a href="blog-details.html">Forsei</a>
+            </h2>
+            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
+            <a href="">Selengkapnya</a>
+          </article>
+        </div><!-- End post list item -->
+
+        <div class="col-xl-4 col-md-6">
+          <article>
+            <div class="post-img text-center">
+              <img src="{{url_for('static', filename='assets/img/kopma2.jpg')}}" alt="" class="img-fluid">
+            </div>
+            <h2 class="title">
+              <a href="blog-details.html">Koperasi Mahasiswa</a>
+            </h2>
+            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
+            <a href="">Selengkapnya</a>
+          </article>
+        </div><!-- End post list item -->
+
+        <div class="col-xl-4 col-md-6">
+          <article>
+            <div class="post-img text-center text-center">
+              <img src="{{url_for('static', filename='assets/img/csc5.png')}}" alt="" class="img-fluid">
+            </div>
+            <h2 class="title">
+              <a href="blog-details.html">Computer Student Club</a>
+            </h2>
+            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
+            <a href="">Selengkapnya</a>
+          </article>
+
+        </div><!-- End post list item -->
+
+      </div><!-- End recent posts list -->
+
+    </div>
+
+  </section><!-- End Daftar Ormawa Section -->
+   <!-- ======= Portfolio Section ======= -->
+   <section id="portfolio" class="portfolio sections-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2 class="mt-5">Galeri</h2>
+        <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti</p>
+      </div>
+
+      <!-- <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+
+        <div>
+          <ul class="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-product">Product</li>
+            <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-books">Books</li>
+          </ul> End Portfolio Filters -->
+        <!-- </div> -->
+
+        <div class="row gy-4 portfolio-container">
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <a href="{{url_for('static', filename='assets/img/gambar1.jpg')}}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{url_for('static', filename='assets/img/gambar1.jpg')}}" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html" title="More Details">Tim PNJ Juara 1 Lomba KMIPN 2018</a></h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-product">
+            <div class="portfolio-wrap">
+              <a href="{{url_for('static', filename='assets/img/gambar2.jpeg')}}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{url_for('static', filename='assets/img/gambar2.jpeg')}}" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html" title="More Details">Latihan Rutin Polvoc</a></h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
+            <div class="portfolio-wrap">
+              <a href="{{url_for('static', filename='assets/img/gambar3.jpg')}}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{url_for('static', filename='assets/img/gambar3.jpg')}}" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html" title="More Details">Poros Siaran</a></h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+            <div class="portfolio-wrap">
+              <a href="{{url_for('static', filename='assets/img/gambar4.jpg')}}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{url_for('static', filename='assets/img/gambar4.jpg')}}" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html" title="More Details">Kopma PNJ</a></h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <a href="{{url_for('static', filename='assets/img/gambar5.png')}}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{url_for('static', filename='assets/img/gambar5.png')}}" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html" title="More Details">Kompetisi Catur Se-PNJ</a></h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <div class="col-xl-4 col-md-6 portfolio-item filter-product">
+            <div class="portfolio-wrap">
+              <a href="{{url_for('static', filename='assets/img/gambar6.png')}}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{url_for('static', filename='assets/img/gambar6.png')}}" class="img-fluid" alt=""></a>
+              <div class="portfolio-info">
+                <h4><a href="portfolio-details.html" title="More Details">Pembelajaran Rutin CSC</a></h4>
+                <p>Lorem ipsum, dolor sit amet consectetur</p>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+         
+
+        </div><!-- End Portfolio Container -->
+
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Section -->
+
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2 class="mt-5">Kontak</h2>
+            <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p>
+          </div>
+  
+          <div class="row gx-lg-0 gy-4">
+  
+            <div class="col-lg-4">
+  
+              <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                <div class="info-item d-flex">
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h4>Lokasi:</h4>
+                    <p>Universitas Indonesia, Jl. Prof. DR. G.A. Siwabessy Kampus, Kukusan, Kecamatan Beji, Kota Depok, Jawa Barat 16425</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex">
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h4>Email:</h4>
+                    <p>info@ormaweb.com</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex">
+                  <i class="bi bi-phone flex-shrink-0"></i>
+                  <div>
+                    <h4>Telepon:</h4>
+                    <p>085880134031</p>
+                  </div>
+                </div><!-- End Info Item -->
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-8">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Nama" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subjek" required>
+                </div>
+                <div class="form-group mt-3">
+                  <textarea class="form-control" name="message" rows="7" placeholder="Pesan" required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button type="submit">Kirim Pesan</button></div>
+              </form>
+            </div><!-- End Contact Form -->
+  
+          </div>
+  
+        </div>
+      </section><!-- End Contact Section -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          
+            <img style="width: 200px; height: 100px;" src="{{url_for('static', filename='assets/img/logoooo.png')}}" alt="">
+          
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem fuga eaque possimus? Provident rerum consectetur, officiis sed tempora odit in.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Ormawa</a></li>
+            <li><a href="#">Galeri</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Kontak</h4>
+          <ul>
+            <li><a href="#">Phone:<br>085880130431</a></li>
+            <li><a href="#">Email:<br>info@ormaweb.com</a></li>
+            <li><a href="#">Website:<br>ormaweb.com</a></li>
+            <li><a href="#">Skype:<br>@ormaweb</a></li>
+            <li><a href="#">Linkedin:<br>ormaweb</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Alamat</h4>
+          <p>
+            Universitas Indonesia,<br> Jl. Prof. DR. G.A. Siwabessy Kampus, Kukusan, Kecamatan Beji,<br> Kota Depok, Jawa Barat 16425<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="credits">
+        Develop by <a href="#">Ormaweb</a>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+</body>
+
+</html>
