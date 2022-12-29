@@ -4,7 +4,13 @@ import mysql.connector
 import werkzeug
 import urllib.request, json 
 
+from ormawa import ormawa
+from admin import admin
+
 application = Flask(__name__)
+
+application.register_blueprint(ormawa)
+application.register_blueprint(admin)
 
 @application.route('/')
 @application.route('/index')
@@ -25,7 +31,7 @@ def register():
 
 @application.route('/dashboard')
 def dashboard():
-    return render_template("dashboard.html")
+    return redirect(url_for('ormawa.show_ormawa'))
 
 @application.route('/prestasi')
 def prestasi():

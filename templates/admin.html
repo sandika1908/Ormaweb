@@ -1,0 +1,36 @@
+{%extends "base_dashboard.html"%}
+
+{%block content%}
+<div class="card">
+    <div class="card-body">
+      <h4 class="mt-2">Prestasi Ormawa</h4>
+      <button type="button" class="btn btn-primary mt-2"><i class="bx bx-plus"></i> Tambah Prestasi</button>
+
+      <!-- Default Table -->
+      <table class="table" style="text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Role</th>
+            <th scope="col">Ormawa</th>
+            <th scope="col">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>2</th>
+            <td>csc_Admin</td>
+            <td>admin</td>
+            <td>csc</td>
+            <td>
+              <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
+              <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
+            </td>
+          </tr>
+      </table>
+      <!-- End small tables -->
+
+    </div>
+  </div>
+{%endblock%}
