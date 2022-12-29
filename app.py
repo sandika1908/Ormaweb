@@ -11,6 +11,10 @@ application = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@application.route('/csc')
+def csc():
+    return render_template("csc.html")
+
 @application.route('/login')
 def login():
     return render_template("login.html")

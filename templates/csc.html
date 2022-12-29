@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ormaweb - CSC</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{url_for('static', filename='assets/img/ormaweb.png')}}" rel="icon">
+  <link href="{{url_for('static', filename='assets/img/ormaweb.png')}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static', filename='assets/css/main.css')}}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="{{url_for('static', filename='assets/img/logoooo.png')}}" alt="">
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{{url_for('index')}}#hero">Beranda</a></li>
+          <li><a href="{{url_for('index')}}#blog  ">Ormawa</a></li>
+          <li><a href="{{url_for('index')}}#portfolio">Galeri</a></li>
+          <li><a href="{{url_for('index')}}#contact">Kontak</a></li>
+          <li><button class="btn btn-danger"><a href="{{url_for('login')}}">Login</a></button></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('../static/assets/img/csc5.png'); background-size: cover;">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Computer Student Club</h2>
+              <p>Politeknik Negeri Jakarta - Universitas Indonesia, Jl. Prof. DR. G.A. Siwabessy Kampus, Kukusan, Kecamatan Beji, Kota Depok, Jawa Barat 16425</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{{url_for('index')}}">Beranda</a></li>
+            <li>CSC</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Details Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-5">
+
+          <div class="col-lg-12">
+
+            <article class="blog-details">
+
+              <div class="post-img">
+                <img src="{{url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="title">Sejarah CSC</h2>
+
+              <div class="content">
+                <p>
+                  CSC adalah sebuah perkumpulan yang didirikan oleh mahasiswa, yang berfokus pada perkembangan teknologi, terkhusus pada keamanan jaringan, pengembangan perangkat lunak, dan pengembangan perangkat keras. pada tahun 2012 diresmikan menjadi sebuah kelompok study mahasiswa (KSM).
+                </p>
+
+                <h3>VISI</h3>
+                <p>
+                  Menjadikan KSM CSC sebagai tempat bernaung bagi mahasiswa untuk mengembangkan minat dan potensi dibidang teknologi, yang memanfaatkannya dengan penuh rasa tanggung jawab, serta mampu mengimplementasikannya di lingkungan masyarakat.
+                </p>
+
+                <h3>MISI</h3>
+                <ol>
+                  <li>Menciptakan ekosistem pembelajaran yang menyenangkan.</li>
+                  <li>Mengembangkan potensi anggota CSC dibidang teknologi.</li>
+                  <li>Mewujudkan anggota CSC yang berkomitmen dan berintegritas tinggi.</li>
+                  <li>Mendorong prestasi anggota CSC.</li>
+                  <li>Wadah sharing dan silahturahmi.</li>
+                </ol>
+
+              </div><!-- End post content -->
+
+              <section id="services" class="services">
+                <div class="container" data-aos="fade-up">
+          
+                <div class="col-lg-4">
+                  
+                </div>
+
+                  <div class="section-header">
+                    <h2>AGENDA CSC 2022/2023</h2>
+                    <p>Selama satu tahun kedepan CSC memiliki beberapa agenda yang harus dijalani seperti berikut.</p>
+                  </div>
+          
+                  <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+          
+                    <div class="col-lg-4 col-md-6">
+                      <div class="service-item  position-relative">
+                        <div class="icon">
+                          <i class="bi bi-activity"></i>
+                        </div>
+                        <h3>Mini Project</h3>
+                        <p>Pengimplementasian pembelajaran berupa studi kasus.</p>
+                      </div>
+                    </div><!-- End Service Item -->
+          
+                    <div class="col-lg-4 col-md-6">
+                      <div class="service-item position-relative">
+                        <div class="icon">
+                          <i class="bi bi-broadcast"></i>
+                        </div>
+                        <h3>OSPF</h3>
+                        <p>Open Sharing Presenting and First Gathering.</p>
+                      </div>
+                    </div><!-- End Service Item -->
+          
+                    <div class="col-lg-4 col-md-6">
+                      <div class="service-item position-relative">
+                        <div class="icon">
+                          <i class="bi bi-easel"></i>
+                        </div>
+                        <h3>ROUTING</h3>
+                        <p>Routine Meeting, pembelajaran mingguan.</p>
+                      </div>
+                    </div><!-- End Service Item -->
+          
+                    <div class="col-lg-4 col-md-6">
+                      <div class="service-item position-relative">
+                        <div class="icon">
+                          <i class="bi bi-bounding-box-circles"></i>
+                        </div>
+                        <h3>CSC Today</h3>
+                        <p>Posdig informasi seputar teknologi.</p>
+                      </div>
+                    </div><!-- End Service Item -->
+          
+                    <div class="col-lg-4 col-md-6">
+                      <div class="service-item position-relative">
+                        <div class="icon">
+                          <i class="bi bi-calendar4-week"></i>
+                        </div>
+                        <h3>Member Of The Month</h3>
+                        <p>Posdig dan hadiah sebagai bentuk apresiasi.</p>
+                      </div>
+                    </div><!-- End Service Item -->
+          
+                    <div class="col-lg-4 col-md-6">
+                      <div class="service-item position-relative">
+                        <div class="icon">
+                          <i class="bi bi-chat-square-text"></i>
+                        </div>
+                        <h3>Seminar</h3>
+                        <p>Seminar seputar keamanan informasi.</p>
+                      </div>
+                    </div><!-- End Service Item -->
+          
+                  </div>
+                  <h3>Media Sosial</h3>
+                  <div class="row">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="service-item position-relative">
+                      <div class="icon">
+                        <i class="bi bi-twitter"></i>
+                      </div>
+                    </div>
+                  </div><!-- End Service Item -->
+
+                  <div class="col-lg-4 col-md-6">
+                    <div class="service-item position-relative">
+                      <div class="icon">
+                        <i class="bi bi-instagram"></i>
+                      </div>
+                    </div>
+                  </div><!-- End Service Item -->
+
+                  <div class="col-lg-4 col-md-6">
+                    <div class="service-item position-relative">
+                      <div class="icon">
+                        <i class="bi bi-facebook"></i>
+                      </div>
+                    </div>
+                  </div><!-- End Service Item -->
+                </div>
+
+            
+          
+                </div>
+              </section><!-- End Our Services Section -->
+
+            </article><!-- End blog post -->
+
+            
+              
+    </section><!-- End Blog Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          
+            <img style="width: 200px; height: 100px;" src="{{url_for('static', filename='assets/img/logoooo.png')}}" alt="">
+          
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem fuga eaque possimus? Provident rerum consectetur, officiis sed tempora odit in.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Ormawa</a></li>
+            <li><a href="#">Galeri</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Kontak</h4>
+          <ul>
+            <li><a href="#">Phone:<br>085880130431</a></li>
+            <li><a href="#">Email:<br>info@ormaweb.com</a></li>
+            <li><a href="#">Website:<br>ormaweb.com</a></li>
+            <li><a href="#">Skype:<br>@ormaweb</a></li>
+            <li><a href="#">Linkedin:<br>ormaweb</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Alamat</h4>
+          <p>
+            Universitas Indonesia,<br> Jl. Prof. DR. G.A. Siwabessy Kampus, Kukusan, Kecamatan Beji,<br> Kota Depok, Jawa Barat 16425<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="credits">
+        Develop by <a href="#">Ormaweb</a>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+</body>
+
+</html>
