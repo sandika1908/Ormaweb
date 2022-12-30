@@ -3,6 +3,7 @@ from flask import request
 import mysql.connector
 import werkzeug
 import urllib.request, json 
+from url import BASE_URL
 
 from ormawa import ormawa
 from admin import admin
@@ -15,7 +16,13 @@ application.register_blueprint(admin)
 @application.route('/')
 @application.route('/index')
 def index():
-    return render_template("index.html")
+    url = f"{BASE_URL}/ormaweb/api/v1/ormawa/"
+
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+
+    return render_template("index.html", data=dict['results'])
 
 @application.route('/csc')
 def csc():
