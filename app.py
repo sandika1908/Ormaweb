@@ -6,11 +6,16 @@ import urllib.request, json
 
 from ormawa import ormawa
 from admin import admin
+from auth import auth
 
 application = Flask(__name__)
 
+application.secret_key = 'c24bf80e37ea94aa012725bfce23ca7603f9391031775d6b5886f25e133ab7dd'
+
+
 application.register_blueprint(ormawa)
 application.register_blueprint(admin)
+application.register_blueprint(auth)
 
 @application.route('/')
 @application.route('/index')
