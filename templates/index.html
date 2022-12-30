@@ -125,85 +125,20 @@
       </div>
 
       <div class="row gy-4">
+        {%for item in data%}
         <div class="col-xl-4 col-md-6">
           <article>
             <div class="post-img text-center">
               <img src="{{url_for('static', filename='assets/img/poros.png')}}" alt="" class="img-fluid">
             </div>
             <h2 class="title">
-              <a href="blog-details.html">Poros FM</a>
+              <a href="blog-details.html">{{item.nama_ormawa}}</a>
             </h2>
-            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
-            <a href="">Selengkapnya</a>
-          </article>
-        </div><!-- End post list item --> 
-
-        <div class="col-xl-4 col-md-6">
-          <article>
-            <div class="post-img text-center">
-              <img src="{{url_for('static', filename='assets/img/pcc2.jpg')}}" alt="" class="img-fluid">
-            </div>
-            <h2 class="title">
-              <a href="blog-details.html">Polytechnic Chess Club</a>
-            </h2>
-            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
+            <p class="post-category">{{item.deskripsi}}</p><br>
             <a href="">Selengkapnya</a>
           </article>
         </div><!-- End post list item -->
-
-        <div class="col-xl-4 col-md-6">
-          <article>
-            <div class="post-img text-center">
-              <img src="{{url_for('static', filename='assets/img/polvoc2.jpg')}}" alt="" class="img-fluid">
-            </div>
-            <h2 class="title">
-              <a href="blog-details.html">Polvoc</a>
-            </h2>
-            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
-            <a href="">Selengkapnya</a>
-          </article>
-        </div><!-- End post list item -->
-
-        <div class="col-xl-4 col-md-6">
-          <article>
-            <div class="post-img text-center">
-              <img src="{{url_for('static', filename='assets/img/forsei2.jpg')}}" alt="" class="img-fluid">
-            </div>
-            <h2 class="title">
-              <a href="blog-details.html">Forsei</a>
-            </h2>
-            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
-            <a href="">Selengkapnya</a>
-          </article>
-        </div><!-- End post list item -->
-
-        <div class="col-xl-4 col-md-6">
-          <article>
-            <div class="post-img text-center">
-              <img src="{{url_for('static', filename='assets/img/kopma2.jpg')}}" alt="" class="img-fluid">
-            </div>
-            <h2 class="title">
-              <a href="blog-details.html">Koperasi Mahasiswa</a>
-            </h2>
-            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
-            <a href="">Selengkapnya</a>
-          </article>
-        </div><!-- End post list item -->
-
-        <div class="col-xl-4 col-md-6">
-          <article>
-            <div class="post-img text-center text-center">
-              <img src="{{url_for('static', filename='assets/img/csc5.png')}}" alt="" class="img-fluid">
-            </div>
-            <h2 class="title">
-              <a href="blog-details.html">Computer Student Club</a>
-            </h2>
-            <p class="post-category">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, iusto.</p><br>
-            <a href="{{url_for('csc')}}">Selengkapnya</a>
-          </article>
-
-        </div><!-- End post list item -->
-
+        {%endfor%}
       </div><!-- End recent posts list -->
 
     </div>
