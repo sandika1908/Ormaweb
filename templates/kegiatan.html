@@ -1,0 +1,37 @@
+{%extends "base_dashboard.html"%} {%block content%}
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="mt-2">Kegiatan Ormawa</h4>
+    <button type="button" class="btn btn-primary mt-2"><i class="bx bx-plus"></i> Tambah Kegiatan</button>
+
+    <!-- Default Table -->
+    <table class="table" style="text-align: center">
+      <thead>
+        <tr>
+          <th scope="col">ID Kegiatan</th>
+          <th scope="col">Nama Kegiatan</th>
+          <th scope="col">Jadwal Kegiatan</th>
+          <th scope="col">deskripsi</th>
+          <th scope="col">ID Ormawa</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for item in data%}
+        <tr>
+          <th>{{item.id_kegiatan}}</th>
+          <td>{{item.nama_kegiatan}}</td>
+          <td>{{item.jadwal_kegiatan}}</td>
+          <td>{{item.deskripsi}}</td>
+          <td>{{item.id_ormawa}}</td>
+          <td>
+            <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
+            <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+</div>
+{%endblock%}

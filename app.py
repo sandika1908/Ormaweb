@@ -44,5 +44,9 @@ def dashboard():
 def prestasi():
     return render_template("prestasi.html")
 
+@application.route('/kegiatan')
+def kegiatan():
+    return render_template("kegiatan.html")    
+
 if __name__ == '__main__':
     application.run(debug=True)
