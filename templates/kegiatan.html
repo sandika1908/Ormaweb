@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Ormaweb - Dashboard Super Admin</title>
+  <title>Ormaweb - Dashboard Admin</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -64,14 +64,14 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="{{url_for('static', filename='assetsdashboard/img/person.jpg')}}" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Super Admin</span>
+            <img src="{{url_for('static', filename='assetsdashboard/img/sandika2.png')}}" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Sandika Arga Pamungkas</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Super Admin</h6>
-              <span>Ormaweb - Team</span>
+              <h6>Sandika Arga Pamungkas</h6>
+              <span>CSC 2022/2023</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -121,18 +121,17 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{url_for('dashboard')}}">
-          <i class="bi bi-grid-fill"></i><span>Ormawa</span></i>
+        <a class="nav-link collapsed" href="{{url_for('kegiatan')}}">
+          <i class="bi bi-table"></i><span>Kegiatan</span></i>
         </a>
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{url_for('admin.show_admin')}}">
-          <i class="bi bi-person-circle"></i>
-          <span>Admin</span>
+        <a class="nav-link collapsed" href="{{url_for('prestasi')}}">
+          <i class="bi bi-trophy-fill"></i>
+          <span>Prestasi</span>
         </a>
       </li><!-- End Tables Nav -->
-
     </ul>
 
   </aside><!-- End Sidebar-->
@@ -140,21 +139,49 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard Super Admin</h1>
+      <h1>Dashboard Admin</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{url_for('index')}}">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active">Kegiatan</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
-      <div class="row">
-        {%block content%}
-        {%endblock%}
-      </div>
-    </section>
+   <!-- Default Table -->
+   <div class="card">
+    <div class="card-body">
+      <h4 class="mt-2">Daftar Kegiatan</h4>
+      <a href=""><button type="button" class="btn btn-primary mt-2"><i class="bx bx-plus"></i> Tambah Kegiatan</button></a>
+      <table class="table" style="text-align: center;">
+   <table class="table" style="text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nama Kegiatan</th>
+        <th scope="col">Jadwal Kegiatan</th>
+        <th scope="col">Deskripsi</th>
+        <th scope="col">ID Ormawa</th>
+        <th scope="col">Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>2</th>
+        <td>Fun Futsal</td>
+        <td>2023/12/02</td>
+        <td>Lapangan Futsal Depok Baru</td>
+        <td>5</td>
+        <td>
+          <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
+          <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
+        </td>
+      </tr>
+  </table>
+</div>
+</div>
+  <!-- End small tables -->
+
 
     </main><!-- End #main -->
 
