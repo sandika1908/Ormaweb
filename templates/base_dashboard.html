@@ -101,7 +101,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a href="{{url_for('auth.logout')}}" class="dropdown-item d-flex align-items-center" href="#">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -140,7 +140,11 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard Super Admin</h1>
+      {%if session['role'] == 'admin'%}
+      <h1>Dashboard Admin</h1>
+      {%else%}
+      <h1>Dashboard super Admin</h1>
+      {%endif%}
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{url_for('index')}}">Home</a></li>
