@@ -7,11 +7,15 @@ from url import BASE_URL
 
 from ormawa import ormawa
 from admin import admin
+from auth import auth
 
 application = Flask(__name__)
 
+application.secret_key = '1768b67767bb8ac8f5b7ecdb48dbef720703387ccce086c562a4bf61000f9c31'
+
 application.register_blueprint(ormawa)
 application.register_blueprint(admin)
+application.register_blueprint(auth)
 
 @application.route('/')
 @application.route('/index')
