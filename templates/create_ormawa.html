@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="<!-- CSS only -->" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <form class="row g-3" method="post">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Nama Ormawa</label>
+          <input type="text" class="form-control" id="inputEmail4" name="nama_ormawa" />
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Deskripsi</label>
+          <input type="text" class="form-control" id="inputEmail4" name="deskripsi" />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Visi</label>
+          <input type="text" class="form-control" id="inputPassword4" name="visi" />
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Misi</label>
+          <input type="text" class="form-control" id="inputAddress" name="misi" />
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label">Ketua</label>
+          <input type="text" class="form-control" id="inputAddress2" name="ketua" />
+        </div>
+
+        {%for data in mapel%}
+        <div class="form-check">
+          <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />
+          <label class="form-check-label" for="flexCheckDefault"> {{data[1]}} </label>
+        </div>
+        {%endfor%}
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
