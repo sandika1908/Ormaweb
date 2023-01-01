@@ -48,5 +48,9 @@ def prestasi():
 def kegiatan():
     return render_template("kegiatan.html")
 
+@application.route('/galeri')
+def galeri():
+    return render_template("galeri.html")
+
 if __name__ == '__main__':
     application.run(debug=True)
