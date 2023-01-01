@@ -132,6 +132,13 @@
           <span>Prestasi</span>
         </a>
       </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{url_for('galeri')}}">
+          <i class="bi bi-image"></i>
+          <span>Galeri</span>
+        </a>
+      </li><!-- End Tables Nav -->
     </ul>
 
   </aside><!-- End Sidebar-->
@@ -163,15 +170,18 @@
           </tr>
         </thead>
         <tbody>
+          {%for item in data%}
           <tr>
-            <th>2</th>
-            <td>Juara 3 Porseni</td>
-            <td>Polvoc</td>
+            <th>{{item.id_prestasi}}</th>
+            <td>{{item.nama_prestasi}}</td>
+            <td>{{item.id_ormawa}}</td>
             <td>
               <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
               <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
             </td>
           </tr>
+          {%endfor%}
+        </tbody>
       </table>
 </div>
 </div>

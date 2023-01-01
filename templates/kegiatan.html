@@ -132,6 +132,13 @@
           <span>Prestasi</span>
         </a>
       </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{url_for('galeri')}}">
+          <i class="bi bi-image"></i>
+          <span>Galeri</span>
+        </a>
+      </li><!-- End Tables Nav -->
     </ul>
 
   </aside><!-- End Sidebar-->
@@ -166,17 +173,18 @@
       </tr>
     </thead>
     <tbody>
+      {%for item in data%}
       <tr>
-        <th>2</th>
-        <td>Fun Futsal</td>
-        <td>2023/12/02</td>
-        <td>Lapangan Futsal Depok Baru</td>
-        <td>5</td>
-        <td>
+        <th>{{item.id_kegiatan}}</th>
+        <td>{{item.nama_kegiatan}}</td>
+        <td>{{item.jadwal_kegiatan}}</td>
+        <td>{{item.deskripsi}}</td>
+        <td>{{item.id_ormawa}}</td>
           <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
           <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
         </td>
       </tr>
+      {%endfor%}
   </table>
 </div>
 </div>
