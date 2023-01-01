@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, flash, session, jsonify
 from flask import request
-import mysql.connector
+#import mysql.connector
 import werkzeug
 import urllib.request, json 
 from url import BASE_URL
@@ -47,6 +47,22 @@ def prestasi():
 @application.route('/kegiatan')
 def kegiatan():
     return render_template("kegiatan.html")
+
+@application.route('/create_prestasi')
+def create_prestasi():
+    return render_template("create_prestasi.html")
+
+@application.route('/create_kegiatan')
+def create_kegiatan():
+    return render_template("create_kegiatan.html")
+
+@application.route('/update_prestasi')
+def update_prestasi():
+    return render_template("update_prestasi.html")
+
+@application.route('/update_kegiatan')
+def update_kegiatan():
+    return render_template("update_kegiatan.html")
 
 if __name__ == '__main__':
     application.run(debug=True)
