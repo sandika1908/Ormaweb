@@ -56,5 +56,9 @@ def kegiatan():
 def galeri():
     return render_template("galeri.html")
 
+@application.route('/create_ormawa')
+def create_ormawa():
+    return render_template("create_ormawa.html")
+
 if __name__ == '__main__':
     application.run(debug=True)
