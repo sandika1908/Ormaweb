@@ -158,30 +158,27 @@
    <!-- Default Table -->
    <div class="card">
     <div class="card-body">
-      <h4 class="mt-2">Daftar Kegiatan</h4>
-      <a href=""><button type="button" class="btn btn-primary mt-2"><i class="bx bx-plus"></i> Tambah Kegiatan</button></a>
+      <h4 class="mt-2">Daftar Galeri</h4>
+      <a href=""><button type="button" class="btn btn-primary mt-2"><i class="bx bx-plus"></i> Tambah Galeri</button></a>
       <table class="table" style="text-align: center;">
    <table class="table" style="text-align: center;">
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Nama Kegiatan</th>
-        <th scope="col">Jadwal Kegiatan</th>
-        <th scope="col">Deskripsi</th>
         <th scope="col">ID Ormawa</th>
+        <th scope="col">Alamat Gambar</th>
         <th scope="col">Aksi</th>
       </tr>
     </thead>
     <tbody>
       {%for item in data%}
       <tr>
-        <th>{{item.id_kegiatan}}</th>
-        <td>{{item.nama_kegiatan}}</td>
-        <td>{{item.jadwal_kegiatan}}</td>
-        <td>{{item.deskripsi}}</td>
+        <th>{{item.id_gambar}}</th>
         <td>{{item.id_ormawa}}</td>
-          <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
-          <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
+        <td>{{item.alamat_gambar}}</td>
+        <td>
+            <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
+            <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
         </td>
       </tr>
       {%endfor%}
