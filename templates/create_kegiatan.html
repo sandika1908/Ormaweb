@@ -1,45 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tambah Prestasi</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .wrapper{
-            width: 600px;
-            margin: 0 auto;
-        }
-    </style>
-</head>
+{%extends "base_dashboard.html"%} {%block content%}
+
 <body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="mt-5">Create Record</h2>
-                    <p>Harap masukkan nama, jadwal, dan deskripsi kegiatan tersebut</p>
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label>Nama Kegiatan</label>
-                            <input type="text" Name="Prestasi" class="form-control">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Jadwal Kegiatan</label>
-                            <input type="date" Name="Jadwal" class="form-control">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Deskripsi Kegiatan</label>
-                            <input type="text" Name="Deskripsi" class="form-control">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="../kegiatan" class="btn btn-secondary ml-2">Cancel</a>
-                    </form>
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="card" style="border-radius: 1rem">
+            <div class="card-body p-5">
+              <h1 class="mb-5 text-center">Create Kegiatan</h1>
+              <form class="row g-3" method="post">
+                
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form6Example3">Nama Kegiatan</label>
+                  <input type="text" id="form6Example3" name="nama_kegiatan" class="form-control" />
                 </div>
-            </div>        
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form6Example4">Jadwal Kegiatan</label>
+                  <input type="date" id="form6Example4" name="jadwal_kegiatan" class="form-control" />
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form6Example4">Deskripsi</label>
+                  <input type="text" id="form6Example4" name="deskripsi" class="form-control" />
+                </div>
+
+                {%for data in mapel%}
+                <div class="form-check">
+                  <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />
+                  <label class="form-check-label" for="flexCheckDefault"> {{data[1]}} </label>
+                </div>
+                {%endfor%}
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </body>
-</html>
+{%endblock%}
