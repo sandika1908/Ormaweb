@@ -7,22 +7,31 @@
         <div class="col-12 col-lg-10">
           <div class="card" style="border-radius: 1rem">
             <div class="card-body p-5">
-              <h1 class="mb-5 text-center">Create Kegiatan</h1>
+              <h1 class="mb-5 text-center">Create Users</h1>
               <form class="row g-3" method="post">
-                
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form6Example3">Nama Kegiatan</label>
-                  <input type="text" id="form6Example3" name="nama_kegiatan" class="form-control" />
+                <div class="row">
+                  <div class="col-12 col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form6Example1">Username</label>
+                      <input type="text" id="form6Example1" name="username" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form6Example2">Password</label>
+                      <input type="text" id="form6Example2" name="password" class="form-control" />
+                    </div>
+                  </div>
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form6Example4">Jadwal Kegiatan</label>
-                  <input type="date" id="form6Example4" name="jadwal_kegiatan" class="form-control" />
+                  <label class="form-label" for="form6Example3">Role</label>
+                  <input type="text" id="form6Example3" name="role" class="form-control" />
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form6Example4">Deskripsi</label>
-                  <input type="text" id="form6Example4" name="deskripsi" class="form-control" />
+                  <label class="form-label" for="form6Example4">Ormawa</label>
+                  <input type="text" id="form6Example4" name="ormawa" class="form-control" />
                 </div>
-
+            
                 {%for data in mapel%}
                 <div class="form-check">
                   <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />

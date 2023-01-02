@@ -1,0 +1,41 @@
+
+{%extends "base_dashboard.html"%}
+{%block content%}
+
+  <body>
+    <div class="container">
+      <form class="row g-3" method="post" action="{{url_for('ormawa.tambah_ormawa')}}">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Nama Ormawa</label>
+          <input type="text" class="form-control" id="inputEmail4" name="nama_ormawa" />
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Deskripsi</label>
+          <input type="text" class="form-control" id="inputEmail4" name="deskripsi" />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Visi</label>
+          <input type="text" class="form-control" id="inputPassword4" name="visi" />
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Misi</label>
+          <input type="text" class="form-control" id="inputAddress" name="misi" />
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label">Ketua</label>
+          <input type="text" class="form-control" id="inputAddress2" name="ketua" />
+        </div>
+
+        {%for data in mapel%}
+        <div class="form-check">
+          <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />
+          <label class="form-check-label" for="flexCheckDefault"> {{data[1]}} </label>
+        </div>
+        {%endfor%}
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+    </div>
+  </body>
+{%endblock%}
