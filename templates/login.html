@@ -50,16 +50,16 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Login Untuk Masuk</h5>
+                    <h5 class="card-title text-center pb-0 fs-4">Login</h5>
                     <p class="text-center small">Masukan Nama dan Password Anda</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form method="post" action="{{url_for('auth.login')}}" class="row g-3 needs-validation" novalidate>
 
                     <div class="col-12">
-                      <label for="yourName" class="form-label">Nama</label>
-                      <input type="text" name="name" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Mohon, masukan nama Anda!</div>
+                      <label for="yourName" class="form-label">Username</label>
+                      <input type="text" name="username" class="form-control" id="yourName" required>
+                      <div class="invalid-feedback">Mohon, masukan Username Anda!</div>
                     </div>
 
                     <div class="col-12">
@@ -69,11 +69,9 @@
                     </div>
 
                     <div class="col-12">
-                      <a href="{{url_for('dashboard')}}"><button class="btn btn-primary w-100" type="button">Login</button></a>
+                      <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
-                    <div class="col-12">
-                      <p class="small mb-0">Belum memiliki akun? <a href="{{url_for('register')}}">Buat akun</a></p>
-                    </div>
+                    
                   </form>
 
                 </div>

@@ -18,16 +18,18 @@
           </tr>
         </thead>
         <tbody>
+          {%for item in data%}
           <tr>
-            <th>2</th>
-            <td>csc_Admin</td>
-            <td>admin</td>
-            <td>csc</td>
+            <th>{{item.id}}</th>
+            <td>{{item.username}}</td>
+            <td>{{item.role}}</td>
+            <td>{{item.ormawa}}</td>
             <td>
               <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
               <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
             </td>
           </tr>
+          {%endfor%}
       </table>
       <!-- End small tables -->
 

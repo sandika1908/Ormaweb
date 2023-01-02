@@ -126,6 +126,9 @@
 
       <div class="row gy-4">
         {%for item in data%}
+        {%if item.nama_ormawa == 'none'%}
+        <!-- kalo nama ormawa == none jangan tampilin -->
+        {%else%}
         <div class="col-xl-4 col-md-6">
           <article>
             <div class="post-img text-center">
@@ -138,6 +141,7 @@
             <a href="">Selengkapnya</a>
           </article>
         </div><!-- End post list item -->
+        {%endif%}
         {%endfor%}
       </div><!-- End recent posts list -->
 

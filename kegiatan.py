@@ -4,14 +4,14 @@ import urllib.request
 import json
 from url import BASE_URL
 
-admin = Blueprint('admin', __name__)
+kegiatan = Blueprint('kegiatan', __name__)
 
-@admin.route('/admin')
-def show_admin():
-    url = f"{BASE_URL}/ormaweb/api/v1/admin/"
+@kegiatan.route('/kegiatan')
+def show_kegiatan():
+    url = f"{BASE_URL}/ormaweb/api/v1/kegiatan/"
 
     response = urllib.request.urlopen(url)
     data = response.read()
     dict = json.loads(data)
 
-    return render_template('admin.html', data=dict['results'])
+    return render_template('kegiatan.html', data=dict['results'])

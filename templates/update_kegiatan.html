@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Record</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .wrapper{
+            width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="mt-5">Update Record</h2>
+                    <p>Harap masukkan nama, jadwal dan deskripsi kegiatan untuk mengubahnya.</p>
+                    <form action="" method="post">
+                    <div class="form-group">
+                            <label>Nama Kegiatan</label>
+                            <input type="text" Name="Kegiatan" class="form-control" value="">
+                            <span class="invalid-feedback"></span>
+                    </div>
+                    <div class="form-group">
+                            <label>Jadwal Kegiatan</label>
+                            <input type="date" Name="Jadwal" class="form-control" value="">
+                            <span class="invalid-feedback"></span>
+                    </div>
+                    <div class="form-group">
+                            <label>Deskripsi Kegiatan</label>
+                            <input type="text" Name="Deskripsi" class="form-control" value="">
+                            <span class="invalid-feedback"></span>
+                    </div>
+                        <input type="hidden" Name="Id_Kelas" value=""/>
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                        <a href="../prestasi" class="btn btn-secondary ml-2">Cancel</a>
+                    </form>
+                </div>
+            </div>        
+        </div>
+    </div>
+</body>
+</html>
