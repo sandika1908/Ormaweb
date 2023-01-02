@@ -77,5 +77,13 @@ def galeri():
 def create_ormawa():
     return render_template("create_ormawa.html")
 
+@application.route('/create_users')
+def create_users():
+    return render_template("create_users.html")
+
+@application.route('/create_galeri')
+def create_galeri():
+    return render_template("create_galeri.html")
+
 if __name__ == '__main__':
     application.run(debug=True)
