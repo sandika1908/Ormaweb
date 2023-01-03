@@ -8,7 +8,7 @@
           <div class="card" style="border-radius: 1rem">
             <div class="card-body p-5">
               <h1 class="mb-5 text-center">Create Users</h1>
-              <form class="row g-3" method="post">
+              <form class="row g-3" method="post" action="{{url_for('admin.tambah_admin')}}">
                 <div class="row">
                   <div class="col-12 col-md-6 mb-4">
                     <div class="form-outline">
@@ -23,20 +23,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form6Example3">Role</label>
-                  <input type="text" id="form6Example3" name="role" class="form-control" />
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form6Example4">Ormawa</label>
-                  <input type="text" id="form6Example4" name="ormawa" class="form-control" />
-                </div>
-            
-                {%for data in mapel%}
+                {%for item in result%}
+                {%if item.nama_ormawa == 'none'%}
+                {%else%}
                 <div class="form-check">
-                  <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />
-                  <label class="form-check-label" for="flexCheckDefault"> {{data[1]}} </label>
+                  <input class="form-check-input" type="radio" name="id_ormawa" value="{{item.id_ormawa}}" id="flexRadioDefault1" />
+                  <label class="form-check-label" for="flexRadioDefault1"> {{item.nama_ormawa}} </label>
                 </div>
+                {%endif%}
                 {%endfor%}
                 <div class="col-12">
                   <button type="submit" class="btn btn-primary">Create</button>

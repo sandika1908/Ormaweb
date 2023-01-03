@@ -83,7 +83,13 @@ def create_ormawa():
 
 @application.route('/create_users')
 def create_users():
-    return render_template("create_users.html")
+    url = f"{BASE_URL}/ormaweb/api/v1/ormawa/"
+
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+    
+    return render_template("create_users.html", result =dict['results'])
 
 @application.route('/create_galeri')
 def create_galeri():
