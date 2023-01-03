@@ -1,41 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Update Record</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .wrapper{
-            width: 600px;
-            margin: 0 auto;
-        }
-    </style>
-</head>
+{%extends "base_dashboard.html"%} {%block content%}
+
 <body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="mt-5">Update Record</h2>
-                    <p>Harap masukkan nama dan deskripsi prestasi untuk mengubahnya.</p>
-                    <form action="" method="post">
-                    <div class="form-group">
-                            <label>Nama Prestasi</label>
-                            <input type="text" Name="Prestasi" class="form-control" value="">
-                            <span class="invalid-feedback"></span>
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="card" style="border-radius: 1rem">
+            <div class="card-body p-5">
+              <h1 class="mb-5 text-center">Update Prestasi</h1>
+              <form class="row g-3" method="post" action="">
+                <div class="row">
+                  {%for item in data%}
+                  <div class="col-12 col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form6Example1">ID Prestasi</label>
+                      <input type="hidden" id="form6Example1" name="id_prestasi" value="{{item.id_prestasi}}" class="form-control" />
                     </div>
-                    <div class="form-group">
-                            <label>Deskripsi Prestasi</label>
-                            <input type="text" Name="Deskripsi" class="form-control" value="">
-                            <span class="invalid-feedback"></span>
+                  </div>
+                  <div class="col-12 col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form6Example1">Nama Prestasi</label>
+                      <input type="text" id="form6Example1" name="nama_prestasi" value="{{item.nama_prestasi}}" class="form-control" />
                     </div>
-                        <input type="hidden" Name="Id_Kelas" value=""/>
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="../prestasi" class="btn btn-secondary ml-2">Cancel</a>
-                    </form>
+                  </div>
                 </div>
-            </div>        
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form6Example4">ID Ormawa</label>
+                  <input type="text" id="form6Example4" name="id_ormawa" value="" class="form-control" />
+                </div>
+                {%endfor%}
+
+                <div class="form-check">
+                  <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />
+                  <label class="form-check-label" for="flexCheckDefault"> {{data[1]}} </label>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </body>
-</html>
+{%endblock%}
