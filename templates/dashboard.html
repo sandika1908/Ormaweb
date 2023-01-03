@@ -3,8 +3,9 @@
 
 <div class="card">
   <div class="card-body">
-    <h4 class="mt-2">Ormawa</h4>
-    <button type="button" class="btn btn-primary mt-2"><i class="bx bx-plus"></i> Tambah Ormawa</button>
+    <h4 class="mt-2">Daftar Ormawa</h4>
+    <a href="{{url_for('create_ormawa')}}"><button type="button" class="btn btn-primary mt-2 mb-3"><i class="bx bx-plus"></i>
+        Tambah Ormawa</button></a>
 
     <!-- Default Table -->
     <table class="table" style="text-align: center;">
@@ -29,8 +30,12 @@
           <td>{{item.misi}}</td>
           <td>{{item.ketua}}</td>
           <td>
-            <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
-            <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
+            <form class="mb-1" action="{{url_for('ormawa.hapus_ormawa', id_ormawa=item.id_ormawa)}}" method="post">
+              <button type="submit" class="btn btn-danger"><i class="bx bx-trash"></i>
+            </form>
+            <form action="" method="post">
+              <button type="submit" class="btn btn-warning"><i class="bx bx-pencil"></i>
+            </form>
           </td>
         </tr>
         {%endfor%}

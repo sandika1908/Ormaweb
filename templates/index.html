@@ -42,7 +42,7 @@
           <li><a href="#blog  ">Ormawa</a></li>
           <li><a href="#portfolio">Galeri</a></li>
           <li><a href="#contact">Kontak</a></li>
-          <li><button class="btn btn-danger"><a href="{{url_for('login')}}">Login</a></button></li>
+          <li><button class="btn btn-danger"><a href="{{url_for('login')}}"><i class="bi bi-person-fill"></i> Login</a></button></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -126,6 +126,9 @@
 
       <div class="row gy-4">
         {%for item in data%}
+        {%if item.nama_ormawa == 'none'%}
+        <!-- kalo nama ormawa == none jangan tampilin -->
+        {%else%}
         <div class="col-xl-4 col-md-6">
           <article>
             <div class="post-img text-center">
@@ -138,6 +141,7 @@
             <a href="">Selengkapnya</a>
           </article>
         </div><!-- End post list item -->
+        {%endif%}
         {%endfor%}
       </div><!-- End recent posts list -->
 
