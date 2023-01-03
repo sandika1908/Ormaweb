@@ -10,13 +10,8 @@
               <h1 class="mb-5 text-center">Update Ormawa</h1>
               <form class="row g-3" method="post" action="{{url_for('ormawa.update_ormawa', id_ormawa=data.id_ormawa)}}">
                 <div class="row">
-                  {%for item in result%}
-                  <div class="col-12 col-md-6 mb-4">
-                    <div class="form-outline">
-                      <label class="form-label" for="form6Example1">ID Ormawa</label>
-                      <input type="hidden" id="form6Example1" name="id_ormawa" value="{{item.id_ormawa}}" class="form-control" />
-                    </div>
-                  </div>
+                  
+
                   <div class="col-12 col-md-6 mb-4">
                     <div class="form-outline">
                       <label class="form-label" for="form6Example1">Nama Ormawa</label>
@@ -42,13 +37,9 @@
                   <label class="form-label" for="form6Example4">Ketua</label>
                   <input type="text" id="form6Example4" name="ketua" value="{{data.ketua}}" class="form-control" />
                 </div>
-                {%endfor%}
+                
 
-                <div class="form-check">
-                  <input class="form-check-input" name="mapel" type="checkbox" value="" id="flexCheckDefault" />
-                  <label class="form-check-label" for="flexCheckDefault"> </label>
-                </div>
-                <div class="col-12">
+                
                   <button type="submit" class="btn btn-primary">Update</button>
                 </div>
               </form>
