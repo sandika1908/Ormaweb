@@ -61,6 +61,10 @@ def create_prestasi():
 def create_kegiatan():
     return render_template("create_kegiatan.html")
 
+@application.route('/update_ormawa')
+def update_ormawa():
+    return render_template("update_ormawa.html")
+
 @application.route('/update_prestasi')
 def update_prestasi():
     return render_template("update_prestasi.html")
