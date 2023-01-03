@@ -8,46 +8,41 @@
           <div class="card" style="border-radius: 1rem">
             <div class="card-body p-5">
               <h1 class="mb-5 text-center">Update Ormawa</h1>
-              <form class="row g-3" method="post" action="">
+              <form class="row g-3" method="post" action="{{url_for('ormawa.update_ormawa', id_ormawa=data.id_ormawa)}}">
                 <div class="row">
-                  {%for item in data%}
-                  <div class="col-12 col-md-6 mb-4">
-                    <div class="form-outline">
-                      <label class="form-label" for="form6Example1">ID Ormawa</label>
-                      <input type="hidden" id="form6Example1" name="id_ormawa" value="{{item.id_ormawa}}" class="form-control" />
-                    </div>
-                  </div>
+                  
+                  
                   <div class="col-12 col-md-6 mb-4">
                     <div class="form-outline">
                       <label class="form-label" for="form6Example1">Nama Ormawa</label>
-                      <input type="text" id="form6Example1" name="nama_ormawa" value="{{item.nama_ormawa}}" class="form-control" />
+                      <input type="text" id="form6Example1" name="nama_ormawa" value="{{data.nama_ormawa}}" class="form-control" />
                     </div>
                   </div>
                   <div class="col-12 col-md-6 mb-4">
                     <div class="form-outline">
                       <label class="form-label" for="form6Example2">Deskripsi</label>
-                      <input type="text" id="form6Example2" name="deskripsi" value="" class="form-control" />
+                      <input type="text" id="form6Example2" name="deskripsi" value="{{data.deskripsi}}" class="form-control" />
                     </div>
                   </div>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form6Example3">Visi</label>
-                  <input type="text" id="form6Example3" name="visi" value="" class="form-control" />
+                  <input type="text" id="form6Example3" name="visi" value="{{data.visi}}" class="form-control" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form6Example4">Misi</label>
-                  <input type="text" id="form6Example4" name="misi" value="" class="form-control" />
+                  <input type="text" id="form6Example4" name="misi" value="{{data.misi}}" class="form-control" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form6Example4">Ketua</label>
-                  <input type="text" id="form6Example4" name="ketua" value="" class="form-control" />
+                  <input type="text" id="form6Example4" name="ketua" value="{{data.ketua}}" class="form-control" />
                 </div>
-                {%endfor%}
+               
 
-                <div class="form-check">
+                <!-- <div class="form-check">
                   <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />
                   <label class="form-check-label" for="flexCheckDefault"> {{data[1]}} </label>
-                </div>
+                </div> -->
                 <div class="col-12">
                   <button type="submit" class="btn btn-primary">Update</button>
                 </div>
