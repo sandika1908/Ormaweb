@@ -61,6 +61,10 @@ def create_prestasi():
 def create_kegiatan():
     return render_template("create_kegiatan.html")
 
+@application.route('/update_ormawa')
+def update_ormawa():
+    return render_template("update_ormawa.html")
+
 @application.route('/update_prestasi')
 def update_prestasi():
     return render_template("update_prestasi.html")
@@ -76,6 +80,14 @@ def galeri():
 @application.route('/create_ormawa')
 def create_ormawa():
     return render_template("create_ormawa.html")
+
+@application.route('/create_users')
+def create_users():
+    return render_template("create_users.html")
+
+@application.route('/create_galeri')
+def create_galeri():
+    return render_template("create_galeri.html")
 
 if __name__ == '__main__':
     application.run(debug=True)
