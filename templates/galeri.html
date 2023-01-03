@@ -158,31 +158,31 @@
    <!-- Default Table -->
    <div class="card">
     <div class="card-body">
-      <h4 class="mt-2">Daftar Prestasi</h4>
-      <a href="../create_prestasi"><button type="button" class="btn btn-primary mt-2 mb-3"><i class="bx bx-plus"></i> Tambah Prestasi</button></a>
+      <h4 class="mt-2">Daftar Galeri</h4>
+      <a href=""><button type="button" class="btn btn-primary mt-2 mb-3"><i class="bx bx-plus"></i> Tambah Galeri</button></a>
       <table class="table" style="text-align: center;">
-        <thead>
-          <tr>
-            <th scope="col">ID Prestasi</th>
-            <th scope="col">Nama Prestasi</th>
-            <th scope="col">Ormawa</th>
-            <th scope="col">Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%for item in data%}
-          <tr>
-            <th>{{item.id_prestasi}}</th>
-            <td>{{item.nama_prestasi}}</td>
-            <td>{{item.id_ormawa}}</td>
-            <td>
-              <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
-              <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
-            </td>
-          </tr>
-          {%endfor%}
-        </tbody>
-      </table>
+   <table class="table" style="text-align: center;">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">ID Ormawa</th>
+        <th scope="col">Alamat Gambar</th>
+        <th scope="col">Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for item in data%}
+      <tr>
+        <th>{{item.id_gambar}}</th>
+        <td>{{item.id_ormawa}}</td>
+        <td>{{item.alamat_gambar}}</td>
+        <td>
+            <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
+            <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
+        </td>
+      </tr>
+      {%endfor%}
+  </table>
 </div>
 </div>
   <!-- End small tables -->

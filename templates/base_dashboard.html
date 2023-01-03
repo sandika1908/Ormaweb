@@ -15,11 +15,15 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="{{url_for('static', filename='assetsdashboard/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{url_for('static', filename='assetsdashboard/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename='assetsdashboard/vendor/bootstrap/css/bootstrap.min.css')}}"
+    rel="stylesheet">
+  <link href="{{url_for('static', filename='assetsdashboard/vendor/bootstrap-icons/bootstrap-icons.css')}}"
+    rel="stylesheet">
   <link href="{{url_for('static', filename='assetsdashboard/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
   <link href="{{url_for('static', filename='assetsdashboard/vendor/quill/quill.snow.css')}}" rel="stylesheet">
   <link href="{{url_for('static', filename='assetsdashboard/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
@@ -37,9 +41,9 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-     
-        <img style="width: 100px; height: 40px;" src="{{url_for('static', filename='assets/img/logoooo.png')}}" alt="">
-   
+
+      <img style="width: 100px; height: 40px;" src="{{url_for('static', filename='assets/img/logoooo.png')}}" alt="">
+
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
 
@@ -62,16 +66,17 @@
         </li><!-- End Messages Nav -->
 
         <li class="nav-item dropdown pe-3">
-
+          {%if session['role'] == 'admin'%}
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="{{url_for('static', filename='assetsdashboard/img/person.jpg')}}" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Super Admin</span>
+            <img src="{{url_for('static', filename='assetsdashboard/img/sandika2.png')}}" alt="Profile"
+              class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Sandika Arga Pamungkas</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Super Admin</h6>
-              <span>Ormaweb - Team</span>
+              <h6>CSC PNJ 2022/2023</h6>
+              <span>Pengurus Harian CSC</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -101,7 +106,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a href="{{url_for('auth.logout')}}" class="dropdown-item d-flex align-items-center" href="#">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -111,13 +116,69 @@
         </li><!-- End Profile Nav -->
 
       </ul>
+
+      {%else%}
+
+      <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+        <img src="{{url_for('static', filename='assetsdashboard/img/person.jpg')}}" alt="Profile"
+          class="rounded-circle">
+        <span class="d-none d-md-block dropdown-toggle ps-2">Super Admin</span>
+      </a><!-- End Profile Iamge Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+        <li class="dropdown-header">
+          <h6>Super Admin</h6>
+          <span>Ormaweb - Team</span>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>My Profile</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+            <i class="bi bi-gear"></i>
+            <span>Account Settings</span>
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a href="{{url_for('auth.logout')}}" class="dropdown-item d-flex align-items-center" href="#">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Sign Out</span>
+          </a>
+        </li>
+
+      </ul><!-- End Profile Dropdown Items -->
+      </li><!-- End Profile Nav -->
+
+      </ul>
+
+      {%endif%}
+
+
     </nav><!-- End Icons Navigation -->
 
   </header><!-- End Header -->
 
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
-
+    {%if session['role'] == 'super admin'%}
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
@@ -131,16 +192,41 @@
           <i class="bi bi-person-circle"></i>
           <span>Admin</span>
         </a>
-      </li><!-- End Tables Nav -->
-
+      </li>
     </ul>
+    {%else%}
+    <ul class="sidebar-nav" id="sidebar-nav">
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{url_for('dashboard')}}">
+          <i class="bi bi-grid-fill"></i><span>kegiatan</span></i>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{url_for('admin.show_admin')}}">
+          <i class="bi bi-person-circle"></i>
+          <span>prestasi</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{url_for('admin.show_admin')}}">
+          <i class="bi bi-person-circle"></i>
+          <span>galeri</span>
+        </a>
+      </li>
+    </ul>
+    {%endif%}
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
+      {%if session['role'] == 'admin'%}
+      <h1>Selamat Datang, Admin Ormawa!</h1>
+      {%else%}
       <h1>Dashboard Super Admin</h1>
+      {%endif%}
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{url_for('index')}}">Home</a></li>
@@ -156,9 +242,10 @@
       </div>
     </section>
 
-    </main><!-- End #main -->
+  </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{{url_for('static', filename='assetsdashboard/vendor/apexcharts/apexcharts.min.js')}}"></script>
@@ -166,7 +253,8 @@
   <script src="{{url_for('static', filename='assetsdashboard/vendor/chart.js/chart.umd.js')}}"></script>
   <script src="{{url_for('static', filename='assetsdashboard/vendor/echarts/echarts.min.js')}}"></script>
   <script src="{{url_for('static', filename='assetsdashboard/vendor/quill/quill.min.js')}}"></script>
-  <script src="{{url_for('static', filename='assetsdashboard/vendor/simple-datatables/simple-datatables.js')}}"></script>
+  <script
+    src="{{url_for('static', filename='assetsdashboard/vendor/simple-datatables/simple-datatables.js')}}"></script>
   <script src="{{url_for('static', filename='assetsdashboard/vendor/tinymce/tinymce.min.js')}}"></script>
   <script src="{{url_for('static', filename='assetsdashboard/vendor/php-email-form/validate.js')}}"></script>
 
