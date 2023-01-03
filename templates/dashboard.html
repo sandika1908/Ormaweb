@@ -22,6 +22,8 @@
       </thead>
       <tbody>
         {%for item in data%}
+        {%if item.nama_ormawa == 'none'%}
+        {%else%}
         <tr>
           <th>{{item.id_ormawa}}</th>
           <td>{{item.nama_ormawa}}</td>
@@ -33,11 +35,12 @@
             <form class="mb-1" action="{{url_for('ormawa.hapus_ormawa', id_ormawa=item.id_ormawa)}}" method="post">
               <button type="submit" class="btn btn-danger"><i class="bx bx-trash"></i>
             </form>
-            <form action="" method="post">
+            <form action="{{url_for('ormawa.update_form_ormawa', id_ormawa=item.id_ormawa)}}" method="get">
               <button type="submit" class="btn btn-warning"><i class="bx bx-pencil"></i>
             </form>
           </td>
         </tr>
+        {%endif%}
         {%endfor%}
     </table>
   </div>
