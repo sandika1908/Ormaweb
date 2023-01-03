@@ -10,7 +10,7 @@
               <h1 class="mb-5 text-center">Update Ormawa</h1>
               <form class="row g-3" method="post" action="">
                 <div class="row">
-                  {%for item in data%}
+                  {%for item in result%}
                   <div class="col-12 col-md-6 mb-4">
                     <div class="form-outline">
                       <label class="form-label" for="form6Example1">ID Ormawa</label>
@@ -45,8 +45,8 @@
                 {%endfor%}
 
                 <div class="form-check">
-                  <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />
-                  <label class="form-check-label" for="flexCheckDefault"> {{data[1]}} </label>
+                  <input class="form-check-input" name="mapel" type="checkbox" value="" id="flexCheckDefault" />
+                  <label class="form-check-label" for="flexCheckDefault"> </label>
                 </div>
                 <div class="col-12">
                   <button type="submit" class="btn btn-primary">Update</button>
