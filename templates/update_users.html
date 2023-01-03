@@ -1,0 +1,56 @@
+{%extends "base_dashboard.html"%} {%block content%}
+
+<body>
+  <div class="mask d-flex align-items-center h-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="card" style="border-radius: 1rem">
+            <div class="card-body p-5">
+              <h1 class="mb-5 text-center">Update Users</h1>
+              <form class="row g-3" method="post" action="">
+                <div class="row">
+                  {%for item in data%}
+                  <div class="col-12 col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form6Example1">ID</label>
+                      <input type="hidden" id="form6Example1" name="id" value="{{item.id}}" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="form6Example1">Username</label>
+                      <input type="text" id="form6Example1" name="username" value="{{item.username}}" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form6Example4">Password</label>
+                  <input type="text" id="form6Example4" name="password" value="" class="form-control" />
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example4">Role</label>
+                    <input type="text" id="form6Example4" name="role" value="" class="form-control" />
+                  </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form6Example4">Ormawa</label>
+                  <input type="text" id="form6Example4" name="ormawa" value="" class="form-control" />
+                </div>
+                {%endfor%}
+
+                <div class="form-check">
+                  <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />
+                  <label class="form-check-label" for="flexCheckDefault"> {{data[1]}} </label>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{%endblock%}
