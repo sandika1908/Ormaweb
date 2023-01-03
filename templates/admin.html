@@ -1,35 +1,43 @@
 {%extends "base_dashboard.html"%} {%block content%}
 <div class="card">
-    <div class="card-body">
-      <h4 class="mt-2">Daftar Admin Ormawa</h4>
-      <a href=""><button type="button" class="btn btn-primary mt-2 mb-3"><i class="bx bx-plus"></i> Tambah Admin</button></a>
+  <div class="card-body">
+    <h4 class="mt-2">Daftar Admin Ormawa</h4>
+    <a href="{{url_for('create_users')}}"
+      ><button type="button" class="btn btn-primary mt-2 mb-3"><i class="bx bx-plus"></i> Tambah Admin</button></a
+    >
 
-      <!-- Default Table -->
-      <table class="table" style="text-align: center;">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Username</th>
-            <th scope="col">Role</th>
-            <th scope="col">Ormawa</th>
-            <th scope="col">Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          {%for item in data%}
-          <tr>
-            <th>{{item.id}}</th>
-            <td>{{item.username}}</td>
-            <td>{{item.role}}</td>
-            <td>{{item.ormawa}}</td>
-            <td>
-              <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
-              <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
-            </td>
-          </tr>
-          {%endfor%}
-      </table>
-      <!-- End small tables -->
+    <!-- Default Table -->
+    <table class="table" style="text-align: center">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Username</th>
+          <th scope="col">Role</th>
+          <th scope="col">Ormawa</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for item in data%}
+        <tr>
+          <th>{{item.id}}</th>
+          <td>{{item.username}}</td>
+          <td>{{item.role}}</td>
+          <td>{{item.ormawa}}</td>
+          <td>
+            <a href=""
+              ><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a
+            >
+            <a href=""
+              ><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a
+            >
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+
+    <!-- End small tables -->
 
     <!-- End small tables -->
   </div>
