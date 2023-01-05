@@ -16,7 +16,7 @@ def show_ormawa():
     data = response.read()
     dict = json.loads(data)
 
-    return render_template('dashboard.html', data=dict['results'])
+    return render_template('ormawa.html', data=dict['results'])
 
 
 @ormawa.route('/update_form_ormawa/<int:id_ormawa>/')
