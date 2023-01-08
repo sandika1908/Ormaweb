@@ -51,3 +51,13 @@ def tambah_admin():
     print(request.form.to_dict())
 
     return redirect(url_for('admin.show_admin'))
+
+@admin.route('/hapus_admin/<int:id>', methods=['POST'])
+def hapus_admin(id):
+    url = f"{BASE_URL}/ormaweb/api/v1/admin/{id}"
+
+    requests.delete(url)
+    print(dict)
+    print(request.form.to_dict())
+
+    return redirect(url_for('admin.show_admin'))

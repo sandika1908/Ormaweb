@@ -17,10 +17,12 @@ def login():
         if request_login.status_code == 200:
             print(request_login.json())
             response_data = request_login.json()
+            # session['id_ormawa'] = response_data['id_ormawa']
             session['logged_in'] = True
             session['id'] = response_data['id']
-            session['username'] = response_data['ormawa']
+            session['ormawa'] = response_data['ormawa']
             session['role'] = response_data['role']
+            session['username'] = response_data['username']
             
             return redirect(url_for('dashboard'))
     return render_template('login.html')
