@@ -10,15 +10,17 @@ from ormawa import ormawa
 from admin import admin
 from auth import auth
 from kegiatan import kegiatan
+from galeri import galeri
 
 application = Flask(__name__)
 
 application.secret_key = '1768b67767bb8ac8f5b7ecdb48dbef720703387ccce086c562a4bf61000f9c31'
-
+application.config['UPLOAD_FOLDER'] = 'static/images'
 application.register_blueprint(ormawa)
 application.register_blueprint(admin)
 application.register_blueprint(auth)
 application.register_blueprint(kegiatan)
+application.register_blueprint(galeri)
 
 
 @application.route('/')
@@ -115,6 +117,16 @@ def create_users():
 @application.route('/create_galeri')
 def create_galeri():
     return render_template("create_galeri.html")
+
+
+@application.route('/update_galeri/<int:id_gambar>')
+def update_form_galeri(id_gambar):
+    url = f"{BASE_URL}/ormaweb/api/v1/galeri_by_id/{id_gambar}"
+
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+    return render_template("update_galeri.html", data=dict)
 
 
 if __name__ == '__main__':
