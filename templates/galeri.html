@@ -3,14 +3,15 @@
 <div class="card">
   <div class="card-body">
     <h4 class="mt-2">Daftar Galeri</h4>
-    <a href="{{url_for('create_galeri')}}"><button type="button" class="btn btn-primary mt-2 mb-3"><i class="bx bx-plus"></i> Tambah
+    <a href="{{url_for('create_galeri')}}"><button type="button" class="btn btn-primary mt-2 mb-3"><i
+          class="bx bx-plus"></i> Tambah
         Galeri</button></a>
     <table class="table" style="text-align: center;">
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">ID Ormawa</th>
-          <th scope="col">Alamat Gambar</th>
+          <th scope="col">Nama File</th>
+          <th scope="col">Gambar</th>
           <th scope="col">Aksi</th>
         </tr>
       </thead>
@@ -18,13 +19,18 @@
         {%for item in data%}
         <tr>
           <th>{{item.id_gambar}}</th>
-          <td>{{item.id_ormawa}}</td>
+          <td>{{item.alamat_gambar}}</td>
           <td>
-            <img width="100px" height="100px" src="{{url_for('static',filename='images/'+item.alamat_gambar)}}" alt="" srcset="">
+            <img width="100px" height="100px" src="{{url_for('static',filename='images/'+item.alamat_gambar)}}" alt=""
+              srcset="">
           </td>
           <td>
-            <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
-            <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
+            <form class="mb-3" action="{{url_for('update_form_galeri', id_gambar=item.id_gambar)}}" method="get">
+              <button type="submit" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button>
+            </form>
+            <form action="{{url_for('galeri.delete_gambar', id_gambar=item.id_gambar)}}" method="post">
+              <button type="submit" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button>
+            </form>
           </td>
         </tr>
         {%endfor%}

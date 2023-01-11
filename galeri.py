@@ -32,3 +32,24 @@ def tambah_galeri(id_ormawa):
     print(dict)
     print(request.form.to_dict())
     return redirect(url_for('dashboard'))
+
+
+@galeri.route('/update_galeri/<int:id_gambar>/', methods=['POST'])
+def update_gambar(id_gambar):
+    url = f"{BASE_URL}/ormaweb/api/v1/galeri/{id_gambar}/"
+
+    file = request.files['file']
+    data_send = {
+        'alamat': file.filename
+    }
+    file.save(os.path.join('static/images', file.filename))
+    print(data_send)
+    requests.patch(url, json=data_send)
+    return redirect(url_for('dashboard'))
+
+@galeri.route('/delete_galeri/<int:id_gambar>/', methods=['POST'])
+def delete_gambar(id_gambar):
+    url = f"{BASE_URL}/ormaweb/api/v1/galeri/{id_gambar}"
+
+    requests.delete(url)
+    return redirect(url_for('dashboard'))

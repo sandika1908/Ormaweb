@@ -119,5 +119,15 @@ def create_galeri():
     return render_template("create_galeri.html")
 
 
+@application.route('/update_galeri/<int:id_gambar>')
+def update_form_galeri(id_gambar):
+    url = f"{BASE_URL}/ormaweb/api/v1/galeri_by_id/{id_gambar}"
+
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+    return render_template("update_galeri.html", data=dict)
+
+
 if __name__ == '__main__':
     application.run(debug=True)
