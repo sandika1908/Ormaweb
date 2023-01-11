@@ -26,13 +26,18 @@ application.register_blueprint(galeri)
 @application.route('/')
 @application.route('/index')
 def index():
-    url = f"{BASE_URL}/ormaweb/api/v1/ormawa/"
+    url_ormawa = f"{BASE_URL}/ormaweb/api/v1/ormawa/"
+    url_galeri = f"{BASE_URL}/ormaweb/api/v1/galeri"
 
-    response = urllib.request.urlopen(url)
-    data = response.read()
-    dict = json.loads(data)
+    response = urllib.request.urlopen(url_ormawa)
+    data_ormawa = response.read()
+    ormawa = json.loads(data_ormawa)
 
-    return render_template("index.html", data=dict['results'])
+    response = urllib.request.urlopen(url_galeri)
+    data_galeri = response.read()
+    galei = json.loads(data_galeri)
+
+    return render_template("index.html", ormawa=ormawa['results'], galeri=galei['results'])
 
 
 @application.route('/csc')
