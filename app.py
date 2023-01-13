@@ -11,6 +11,7 @@ from admin import admin
 from auth import auth
 from kegiatan import kegiatan
 from galeri import galeri
+from prestasi import prestasi
 
 application = Flask(__name__)
 
@@ -21,18 +22,24 @@ application.register_blueprint(admin)
 application.register_blueprint(auth)
 application.register_blueprint(kegiatan)
 application.register_blueprint(galeri)
+application.register_blueprint(prestasi)
 
 
 @application.route('/')
 @application.route('/index')
 def index():
-    url = f"{BASE_URL}/ormaweb/api/v1/ormawa/"
+    url_ormawa = f"{BASE_URL}/ormaweb/api/v1/ormawa/"
+    url_galeri = f"{BASE_URL}/ormaweb/api/v1/galeri"
 
-    response = urllib.request.urlopen(url)
-    data = response.read()
-    dict = json.loads(data)
+    response = urllib.request.urlopen(url_ormawa)
+    data_ormawa = response.read()
+    ormawa = json.loads(data_ormawa)
 
-    return render_template("index.html", data=dict['results'])
+    response = urllib.request.urlopen(url_galeri)
+    data_galeri = response.read()
+    galei = json.loads(data_galeri)
+
+    return render_template("index.html", ormawa=ormawa['results'], galeri=galei['results'])
 
 
 @application.route('/csc')
@@ -58,9 +65,7 @@ def dashboard():
         return redirect(url_for('kegiatan.show_kegiatan', id_ormawa=session['ormawa']))
 
 
-@application.route('/prestasi')
-def prestasi():
-    return render_template("prestasi.html")
+
 
 
 @application.route('/kegiatan')

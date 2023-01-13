@@ -4,14 +4,13 @@ import urllib.request
 import json
 from url import BASE_URL
 
-prestasi = Blueprint('prestsasi', __name__)
+prestasi = Blueprint('prestasi', __name__)
 
-@prestasi.route('/ormawa')
-def show_prestasi():
-    url = f"{BASE_URL}/ormaweb/api/v1/ormawa/"
+@prestasi.route('/prestasi/<int:id_ormawa>')
+def show_prestasi_by_id_ormawa(id_ormawa: int):
+    url = f"{BASE_URL}/ormaweb/api/v1/prestasi/{id_ormawa}"
 
     response = urllib.request.urlopen(url)
     data = response.read()
     dict = json.loads(data)
-
-    return render_template('dashboard.html', data=dict['results'])
+    return render_template("prestasi.html", data=dict['results'])
