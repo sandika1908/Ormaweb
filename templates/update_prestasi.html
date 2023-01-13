@@ -11,29 +11,17 @@
               <form class="row g-3" method="post" action="">
                 <div class="row">
                   {%for item in data%}
-                  <div class="col-12 col-md-6 mb-4">
-                    <div class="form-outline">
-                      <label class="form-label" for="form6Example1">ID Prestasi</label>
-                      <input type="hidden" id="form6Example1" name="id_prestasi" value="{item.id_prestasi}" class="form-control" />
-                    </div>
-                  </div>
+
                   <div class="col-12 col-md-6 mb-4">
                     <div class="form-outline">
                       <label class="form-label" for="form6Example1">Nama Prestasi</label>
-                      <input type="text" id="form6Example1" name="nama_prestasi" value="{item.nama_prestasi}" class="form-control" />
+                      <input type="text" id="form6Example1" name="nama_prestasi" value="{{item.nama_prestasi}}" class="form-control" />
                     </div>
                   </div>
                 </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label" for="form6Example4">ID Ormawa</label>
-                  <input type="text" id="form6Example4" name="id_ormawa" value="" class="form-control" />
-                </div>
                 {%endfor%}
 
-                <div class="form-check">
-                  <input class="form-check-input" name="mapel" type="checkbox" value="{data[0]}" id="flexCheckDefault" />
-                  <label class="form-check-label" for="flexCheckDefault"> {data[1]} </label>
-                </div>
+
                 <div class="col-12">
                   <button type="submit" class="btn btn-primary">Update</button>
                 </div>

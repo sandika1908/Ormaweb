@@ -11,6 +11,7 @@ from admin import admin
 from auth import auth
 from kegiatan import kegiatan
 from galeri import galeri
+from prestasi import prestasi
 
 application = Flask(__name__)
 
@@ -21,6 +22,7 @@ application.register_blueprint(admin)
 application.register_blueprint(auth)
 application.register_blueprint(kegiatan)
 application.register_blueprint(galeri)
+application.register_blueprint(prestasi)
 
 
 @application.route('/')
@@ -63,9 +65,7 @@ def dashboard():
         return redirect(url_for('kegiatan.show_kegiatan', id_ormawa=session['ormawa']))
 
 
-@application.route('/prestasi')
-def prestasi():
-    return render_template("prestasi.html")
+
 
 
 @application.route('/kegiatan')
