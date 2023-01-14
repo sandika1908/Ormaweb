@@ -8,7 +8,7 @@
           <div class="card" style="border-radius: 1rem">
             <div class="card-body p-5">
               <h1 class="mb-5 text-center">Create Prestasi</h1>
-              <form  class="row g-3" method="post">
+              <form action="{{url_for('prestasi.tambah_prestasi', id_ormawa=session['ormawa'])}}" class="row g-3" method="post">
                 <div class="form-outline mb-4">
                   <label class="form-label" for="form6Example3">Nama Prestasi</label>
                   <input type="text" id="form6Example3" name="nama_prestasi" class="form-control" />
