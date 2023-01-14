@@ -1,11 +1,12 @@
-{%extends "base_dashboard.html"%}
+{%extends "base_dashboard.html"%} 
 {%block content%}
 <div class="card">
   <div class="card-body">
     <h4 class="mt-2">Daftar Prestasi</h4>
-    <a href="../create_prestasi"><button type="button" class="btn btn-primary mt-2 mb-3"><i class="bx bx-plus"></i>
-        Tambah Prestasi</button></a>
-    <table class="table" style="text-align: center;">
+    <a href="{{url_for('create_prestasi')}}"
+      ><button type="button" class="btn btn-primary mt-2 mb-3"><i class="bx bx-plus"></i> Tambah Prestasi</button></a
+    >
+    <table class="table" style="text-align: center">
       <thead>
         <tr>
           <th scope="col">ID Prestasi</th>
@@ -21,8 +22,12 @@
           <td>{{item.nama_prestasi}}</td>
           <td>{{item.id_ormawa}}</td>
           <td>
-            <a href=""><button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button></a>
-            <a href=""><button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button></a>
+            <form action="{{url_for('prestasi.update_form_prestasi', id_prestasi=item.id_prestasi)}}" method="get">
+              <button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button>
+            </form>
+            <form action="{{url_for('prestasi.hapus_prestasi', id_prestasi=item.id_prestasi)}}" method="post">
+              <button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button>
+            </form>
           </td>
         </tr>
         {%endfor%}
