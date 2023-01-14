@@ -140,13 +140,13 @@
         <div class="col-xl-4 col-md-6">
           <article>
             <div class="post-img text-center">
-              <img src="{{url_for('static', filename='assets/img/csc5.png')}}" alt="" class="img-fluid">
+              <img src="{{url_for('static', filename='images/'+item.alamat_gambar)}}" alt="" class="img-fluid">
             </div>
             <h2 class="title">
               <a href="blog-details.html">{{item.nama_ormawa}}</a>
             </h2>
             <p class="post-category">{{item.deskripsi}}</p><br>
-            <a href="{{url_for('csc')}}">Selengkapnya</a>
+            <a href="{{url_for('ormawa.show_ormawa_by_id', id_ormawa=item.id_ormawa)}}">Selengkapnya</a>
           </article>
         </div><!-- End post list item -->
         {%endif%}

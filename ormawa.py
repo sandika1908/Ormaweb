@@ -19,6 +19,23 @@ def show_ormawa():
     return render_template('ormawa.html', data=dict['results'])
 
 
+@ormawa.route('/ormawa/<int:id_ormawa>')
+def show_ormawa_by_id(id_ormawa):
+    url = f"{BASE_URL}/ormaweb/api/v1/ormawa/{id_ormawa}"
+    url_kegiatan = f"{BASE_URL}/ormaweb/api/v1/kegiatan/{id_ormawa}"
+
+    response = urllib.request.urlopen(url)
+    response_kegiatan = urllib.request.urlopen(url_kegiatan)
+
+    data_kegiatan = response_kegiatan.read()
+    data = response.read()
+
+    dict_kegiatan = json.loads(data_kegiatan)
+    dict = json.loads(data)
+
+    return render_template('csc.html', data=dict, kegiatan=dict_kegiatan['results'])
+
+
 @ormawa.route('/update_form_ormawa/<int:id_ormawa>/')
 def update_form_ormawa(id_ormawa):
     url = f"{BASE_URL}/ormaweb/api/v1/ormawa/{id_ormawa}"

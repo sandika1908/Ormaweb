@@ -65,9 +65,6 @@ def dashboard():
         return redirect(url_for('kegiatan.show_kegiatan', id_ormawa=session['ormawa']))
 
 
-
-
-
 @application.route('/kegiatan')
 def kegiatan():
     return render_template("kegiatan.html")
