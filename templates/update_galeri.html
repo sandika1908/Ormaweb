@@ -10,11 +10,17 @@
                         <div class="card-body p-5">
                             <h1 class="mb-5 text-center">Update Galeri</h1>
                             <form class="row g-3" enctype="multipart/form-data" method="post"
-                                action="{{url_for('galeri.update_gambar', id_gambar=data.id_gambar)}}">
+                                action="{{url_for('galeri.update_gambar',alamat_gambar=data.alamat_gambar, id_gambar=data.id_gambar)}}">
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form6Example3">Foto</label>
-                                    <input type="file" id="form6Example3" name="file" class="form-control" />
+                                    <input value="{{url_for('static', filename='images/'+data.alamat_gambar)}}"
+                                        type="file" id="form6Example3" name="file" class="form-control" />
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form6Example3">Deskripsi</label>
+                                    <input value="{{data.deskripsi_gambar}}" type="text" id="form6Example3" name="deskripsi_gambar"
+                                        class="form-control" />
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary">Update</button>

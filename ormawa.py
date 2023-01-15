@@ -4,6 +4,7 @@ import urllib.request
 import json
 import requests
 from url import BASE_URL
+import os
 
 ormawa = Blueprint('ormawa', __name__)
 
@@ -47,14 +48,23 @@ def update_form_ormawa(id_ormawa):
     return render_template('update_ormawa.html', data=dict)
 
 
-@ormawa.route('/update_rmawa/<int:id_ormawa>/', methods=['POST'])
-def update_ormawa(id_ormawa):
+@ormawa.route('/update_rmawa/<string:alamat_gambar>/<int:id_ormawa>/', methods=['POST'])
+def update_ormawa(id_ormawa, alamat_gambar):
     url = f"{BASE_URL}/ormaweb/api/v1/ormawa/{id_ormawa}"
 
     data_send = request.form.to_dict()
+    file = request.files['file']
+    print(file.filename)
+    print(alamat_gambar)
+    if file.filename:
+        data_send['alamat_gambar'] = file.filename
+        file.save(os.path.join('static/images', file.filename))
+
+    else:
+        data_send['alamat_gambar'] = alamat_gambar
+
     requests.patch(url, json=data_send)
-    print(dict)
-    print(request.form.to_dict())
+    print(data_send)
     return redirect(url_for('dashboard'))
 
 
@@ -63,7 +73,11 @@ def tambah_ormawa():
     url = f"{BASE_URL}/ormaweb/api/v1/ormawa/"
 
     data_send = request.form.to_dict()
+    file = request.files['file']
+    data_send['alamat_gambar'] = file.filename
+
     requests.post(url, json=data_send)
+    file.save(os.path.join('static/images', file.filename))
     print(dict)
     print(request.form.to_dict())
     return redirect(url_for('dashboard'))

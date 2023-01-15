@@ -24,28 +24,36 @@ def show_galeri(id_ormawa):
 def tambah_galeri(id_ormawa):
     url = f"{BASE_URL}/ormaweb/api/v1/galeri/{id_ormawa}"
     file = request.files['file']
+    deskripsi = request.form['deskripsi']
     data_send = {
-        'alamat': file.filename
+        'alamat_gambar': file.filename,
+        'deskripsi_gambar': deskripsi
     }
     file.save(os.path.join('static/images', file.filename))
     requests.post(url, json=data_send)
-    print(dict)
+    print(file.filename)
     print(request.form.to_dict())
     return redirect(url_for('dashboard'))
 
 
-@galeri.route('/update_galeri/<int:id_gambar>/', methods=['POST'])
-def update_gambar(id_gambar):
+@galeri.route('/update_galeri/<string:alamat_gambar>/<int:id_gambar>/', methods=['POST'])
+def update_gambar(id_gambar, alamat_gambar):
     url = f"{BASE_URL}/ormaweb/api/v1/galeri/{id_gambar}/"
+    # deskripsi = request.form['deskripsi_gambar']
 
+    data_send = request.form.to_dict()
     file = request.files['file']
-    data_send = {
-        'alamat': file.filename
-    }
-    file.save(os.path.join('static/images', file.filename))
+
+    if file.filename:
+        data_send['alamat_gambar'] = file.filename
+        file.save(os.path.join('static/images', file.filename))
+
+    else:
+        data_send['alamat_gambar'] = alamat_gambar
     print(data_send)
     requests.patch(url, json=data_send)
     return redirect(url_for('dashboard'))
+
 
 @galeri.route('/delete_galeri/<int:id_gambar>/', methods=['POST'])
 def delete_gambar(id_gambar):

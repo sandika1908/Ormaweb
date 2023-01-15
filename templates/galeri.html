@@ -12,6 +12,7 @@
           <th scope="col">ID</th>
           <th scope="col">Nama File</th>
           <th scope="col">Gambar</th>
+          <th scope="col">Deskripsi</th>
           <th scope="col">Aksi</th>
         </tr>
       </thead>
@@ -23,6 +24,9 @@
           <td>
             <img width="100px" height="100px" src="{{url_for('static',filename='images/'+item.alamat_gambar)}}" alt=""
               srcset="">
+          </td>
+          <td>
+            {{item.deskripsi}}
           </td>
           <td>
             <form class="mb-3" action="{{url_for('update_form_galeri', id_gambar=item.id_gambar)}}" method="get">

@@ -1,1 +1,1 @@
-BASE_URL = "https://bffb-114-124-177-100.ap.ngrok.io"
+BASE_URL = "https://0978-114-124-244-186.ap.ngrok.io"
