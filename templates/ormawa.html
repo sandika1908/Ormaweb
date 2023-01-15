@@ -39,7 +39,7 @@
           </td>
           <td>
             <form class="mb-1" action="{{url_for('ormawa.hapus_ormawa', id_ormawa=item.id_ormawa)}}" method="post">
-              <button type="submit" class="btn btn-danger"><i class="bx bx-trash"></i>
+              <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin hapus?');"><i class="bx bx-trash"></i>
             </form>
             <form action="{{url_for('ormawa.update_form_ormawa', id_ormawa=item.id_ormawa)}}" method="get">
               <button type="submit" class="btn btn-warning"><i class="bx bx-pencil"></i>

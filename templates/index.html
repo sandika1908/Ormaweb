@@ -44,9 +44,16 @@
           <li><a href="#blog  ">Ormawa</a></li>
           <li><a href="#portfolio">Galeri</a></li>
           <li><a href="#contact">Kontak</a></li>
+          {%if session['role'] == 'admin'%}
+          <li class="dropdown"><a href="#"><span>Admin: {{ session.username }}</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{{url_for('dashboard')}}">Dashboard</a></li>
+              <li><a href="{{url_for('logout')}}">Logout</a></li>
+          {%else%}
           <li><button class="btn btn-danger"><a href="{{url_for('login')}}"><i class="bi bi-person-fill"></i>
                 Login</a></button></li>
         </ul>
+          {%endif%}
       </nav><!-- .navbar -->
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -65,8 +72,8 @@
           <p>Ormaweb merupakan aplikasi berbasis website, yang bertujuan menjadi pusat informasi kegiatan mahasiswa PNJ
           </p>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started">Mulai</a>
-            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+            <a href="#blog" class="btn-get-started">Mulai</a>
+            <a href="#"
               class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Nonton
                 Video</span></a>
           </div>
@@ -128,8 +135,7 @@
 
       <div class="section-header">
         <h2 class="mt-5">Daftar Ormawa</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae iure nulla quasi dolorem tempore sapiente
-          perferendis, ab optio labore quo?</p>
+        <p>Organisasi mahasiswa atau biasa disebut dengan ormawa adalah wadah bagi mahasiswa PNJ untuk menyalurkan minat serta bakat sesuai dengan keinginnannya.</p>
       </div>
 
       <div class="row gy-4">
@@ -162,21 +168,8 @@
 
       <div class="section-header">
         <h2 class="mt-5">Galeri</h2>
-        <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia
-          reprehenderit sunt deleniti</p>
+        <p>Dokumentasi terbaik minggu ini dari ormawa yang ada di PNJ.</p>
       </div>
-
-      <!-- <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
-
-        <div>
-          <ul class="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Product</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Books</li>
-          </ul> End Portfolio Filters -->
-      <!-- </div> -->
 
       <div class="row gy-4 portfolio-container">
 
@@ -206,8 +199,7 @@
 
       <div class="section-header">
         <h2 class="mt-5">Kontak</h2>
-        <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem
-          dolore earum</p>
+        <p>Hubungi kami untuk mendapatkan info lebih lengkap.</p>
       </div>
 
       <div class="row gx-lg-0 gy-4">
@@ -283,8 +275,7 @@
           <img style="width: 200px; height: 100px;" src="{{url_for('static', filename='assets/img/logoooo.png')}}"
             alt="">
 
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem fuga eaque possimus? Provident rerum
-            consectetur, officiis sed tempora odit in.</p>
+          <p>Organisasi mahasiswa atau biasa disebut dengan ormawa adalah wadah bagi mahasiswa PNJ untuk menyalurkan minat serta bakat sesuai dengan keinginnannya.</p>
           <div class="social-links d-flex mt-4">
             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>

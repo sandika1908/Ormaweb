@@ -26,7 +26,7 @@
               <button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button>
             </form>
             <form action="{{url_for('prestasi.hapus_prestasi', id_prestasi=item.id_prestasi)}}" method="post">
-              <button type="" class="btn btn-danger"><i class="bx bx-trash"></i> Hapus</button>
+              <button type="" class="btn btn-danger" onclick="return confirm('Yakin ingin hapus?');"><i class="bx bx-trash"></i> Hapus</button>
             </form>
           </td>
         </tr>

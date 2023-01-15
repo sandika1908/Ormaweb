@@ -51,6 +51,10 @@ def csc():
 def login():
     return render_template("login.html")
 
+@application.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
 
 @application.route('/register')
 def register():
