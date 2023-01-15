@@ -10,7 +10,7 @@
           <div class="card" style="border-radius: 1rem">
             <div class="card-body p-5">
               <h1 class="mb-5 text-center">Create Ormawa</h1>
-              <form class="row g-3" method="post" action="{{url_for('ormawa.tambah_ormawa')}}">
+              <form class="row g-3" enctype="multipart/form-data" method="post" action="{{url_for('ormawa.tambah_ormawa')}}">
                 <div class="row">
                   <div class="col-12 col-md-6 mb-4">
                     <div class="form-outline">
@@ -37,13 +37,10 @@
                   <label class="form-label" for="form6Example4">Ketua</label>
                   <input type="text" id="form6Example4" name="ketua" class="form-control" />
                 </div>
-
-                {%for data in mapel%}
-                <div class="form-check">
-                  <input class="form-check-input" name="mapel" type="checkbox" value="{{data[0]}}" id="flexCheckDefault" />
-                  <label class="form-check-label" for="flexCheckDefault"> {{data[1]}} </label>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form6Example3">Foto</label>
+                  <input type="file" id="form6Example3" name="file" class="form-control" />
                 </div>
-                {%endfor%}
                 <div class="col-12">
                   <button type="submit" class="btn btn-primary">Create</button>
                 </div>
