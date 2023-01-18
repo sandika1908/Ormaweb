@@ -23,12 +23,13 @@ def show_galeri(id_ormawa):
 @galeri.route('/tambah_galeri/<int:id_ormawa>', methods=['POST'])
 def tambah_galeri(id_ormawa):
     url = f"{BASE_URL}/ormaweb/api/v1/galeri/{id_ormawa}"
-    file = request.files['file']
+    file = request.files['file']  # ambil file dari form
     deskripsi = request.form['deskripsi']
     data_send = {
         'alamat_gambar': file.filename,
         'deskripsi_gambar': deskripsi
     }
+    # simpan gambar kedalam aplikasi
     file.save(os.path.join('static/images', file.filename))
     requests.post(url, json=data_send)
     print(file.filename)
@@ -44,7 +45,7 @@ def update_gambar(id_gambar, alamat_gambar):
     data_send = request.form.to_dict()
     file = request.files['file']
 
-    if file.filename:
+    if file.filename:  # jika file di isi yang baru
         data_send['alamat_gambar'] = file.filename
         file.save(os.path.join('static/images', file.filename))
 

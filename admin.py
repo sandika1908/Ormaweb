@@ -12,15 +12,15 @@ admin = Blueprint('admin', __name__)
 def show_admin():
     url = f"{BASE_URL}/ormaweb/api/v1/admin/"
 
-    response = urllib.request.urlopen(url)
+    response = urllib.request.urlopen(url)  # kirim request ke api
     data = response.read()
-    dict = json.loads(data)
+    dict = json.loads(data)  # data yang dikembalikan dari api
 
     return render_template('admin.html', data=dict['results'])
 
 
 @admin.route('/admin/<int:id>', methods=['GET'])
-def update_form_admin(id): 
+def update_form_admin(id):
     url = f"{BASE_URL}/ormaweb/api/v1/admin/{id}/"
 
     response = urllib.request.urlopen(url)
@@ -34,7 +34,9 @@ def update_form_admin(id):
 def update_admin(id):
     url = f"{BASE_URL}/ormaweb/api/v1/admin/{id}/"
 
+    # data yang diambil dari form dalam bentuk json
     data_send = request.form.to_dict()
+
     requests.patch(url, json=data_send)
     print(dict)
     print(request.form.to_dict())
@@ -45,12 +47,15 @@ def update_admin(id):
 def tambah_admin():
     url = f"{BASE_URL}/ormaweb/api/v1/admin/"
 
+    # data yang diambil dari form dalam bentuk json
     data_send = request.form.to_dict()
+    
     requests.post(url, json=data_send)
     print(dict)
     print(request.form.to_dict())
 
     return redirect(url_for('admin.show_admin'))
+
 
 @admin.route('/hapus_admin/<int:id>', methods=['POST'])
 def hapus_admin(id):

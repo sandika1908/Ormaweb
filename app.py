@@ -63,7 +63,7 @@ def register():
 
 @application.route('/dashboard')
 def dashboard():
-    if session['role'] == 'super admin':
+    if session['role'] == 'super admin': #cek jika role nya super admin
         return redirect(url_for('ormawa.show_ormawa'))
     else:
         return redirect(url_for('kegiatan.show_kegiatan', id_ormawa=session['ormawa']))
