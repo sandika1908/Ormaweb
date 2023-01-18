@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="en">
 
@@ -183,6 +184,43 @@
           {%endfor%}
         </tbody>
       </table>
+=======
+{%extends "base_dashboard.html"%} 
+{%block content%}
+<div class="card">
+  <div class="card-body">
+    <h4 class="mt-2">Daftar Prestasi</h4>
+    <a href="{{url_for('create_prestasi')}}"
+      ><button type="button" class="btn btn-primary mt-2 mb-3"><i class="bx bx-plus"></i> Tambah Prestasi</button></a
+    >
+    <table class="table" style="text-align: center">
+      <thead style="background-color: rgb(132, 132, 169); color: white;">
+          <th scope="col">ID Prestasi</th>
+          <th scope="col">Nama Prestasi</th>
+          <th scope="col">Ormawa</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for item in data%}
+        <tr>
+          <th>{{item.id_prestasi}}</th>
+          <td>{{item.nama_prestasi}}</td>
+          <td>{{item.id_ormawa}}</td>
+          <td>
+            <form action="{{url_for('prestasi.update_form_prestasi', id_prestasi=item.id_prestasi)}}" method="get">
+              <button type="" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button>
+            </form>
+            <form action="{{url_for('prestasi.hapus_prestasi', id_prestasi=item.id_prestasi)}}" method="post">
+              <button type="" class="btn btn-danger" onclick="return confirm('Yakin ingin hapus?');"><i class="bx bx-trash"></i> Hapus</button>
+            </form>
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+>>>>>>> Stashed changes
 </div>
 </div>
   <!-- End small tables -->

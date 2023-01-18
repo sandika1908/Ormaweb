@@ -161,6 +161,7 @@
       <h4 class="mt-2">Daftar Kegiatan</h4>
       <a href="../create_kegiatan"><button type="button" class="btn btn-primary mt-2"><i class="bx bx-plus"></i> Tambah Kegiatan</button></a>
       <table class="table" style="text-align: center;">
+<<<<<<< Updated upstream
    <table class="table" style="text-align: center;">
     <thead>
       <tr>
@@ -187,6 +188,40 @@
       {%endfor%}
   </table>
 </div>
+=======
+        <thead style="background-color: rgb(132, 132, 169); color: white;">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nama Kegiatan</th>
+            <th scope="col">Hari</th>
+            <th scope="col">Deskripsi</th>
+            <th scope="col">Waktu</th>
+            <th scope="col">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for item in data%}
+          <tr>
+            <th>{{item.id_kegiatan}}</th>
+            <td>{{item.nama_kegiatan}}</td>
+            <td>{{item.hari}}</td>
+            <td>{{item.deskripsi}}</td>
+            <td>{{item.waktu}}</td>
+            <td>
+              <form action="{{url_for('kegiatan.update_form_kegiatan', id_kegiatan=item.id_kegiatan)}}" method="get">
+                <button type="submit" class="btn btn-warning"><i class="bx bx-pencil"></i> Ubah</button>
+              </form>
+              <form action="{{url_for('kegiatan.hapus_kegiatan', id_kegiatan=item.id_kegiatan)}}" method="post">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin hapus?');"><i class="bx bx-trash"></i> Hapus</button>
+              </form>
+            </td>
+            </td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+  </div>
+>>>>>>> Stashed changes
 </div>
   <!-- End small tables -->
 
