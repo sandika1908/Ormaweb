@@ -24,6 +24,8 @@ application.register_blueprint(kegiatan)
 application.register_blueprint(galeri)
 application.register_blueprint(prestasi)
 
+app.config.from_object(_name_)
+Session(app)
 
 @application.route('/')
 @application.route('/index')

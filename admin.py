@@ -75,21 +75,3 @@ def show_admin_by_id_ormawa(id_ormawa: int):
     data = response.read()
     dict = json.loads(data)
     return render_template("admin.html", data=dict['results'])
-
-def register():
-    if request.method=='GET':
-        return render_template('login.html')
-    else :
-        username = request.form['username']
-        password = request.form['password'].encode('utf-8')
-        hash_password = bcrypt.hashpw(password, bcrypt.gensalt())
-        cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM akses WHERE name=%s OR email=%s',(username, email, ))
-        user = cur.fetchone()
-        if user is None:
-            cur.execute("INSERT INTO akses (name,email,password) VALUES (%s,%s,%s)" ,(username, email, hash_password)) 
-            mysql.connection.commit()
-            flash('Registrasi Behasil, Silahkan Klik Tombol Login!','success')
-        else:
-            flash('Username atau email sudah ada','danger') 
-        return redirect(url_for('register'))
