@@ -24,6 +24,7 @@ application.register_blueprint(kegiatan)
 application.register_blueprint(galeri)
 application.register_blueprint(prestasi)
 
+#session['username'] = ''
 
 @application.route('/')
 @application.route('/index')
