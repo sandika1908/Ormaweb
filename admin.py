@@ -66,3 +66,14 @@ def hapus_admin(id):
     print(request.form.to_dict())
 
     return redirect(url_for('admin.show_admin'))
+
+@admin.route('/admin/<int:id_ormawa>')
+def show_admin_by_id_ormawa(id_ormawa: int):
+    url = f"{BASE_URL}/ormaweb/api/v1/admin/{id_ormawa}"
+
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+    return render_template("prestasi.html", data=dict['results'])
+
+    
