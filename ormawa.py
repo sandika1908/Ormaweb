@@ -1,4 +1,4 @@
-from flask import (render_template, request,
+from flask import (render_template, request, session,
                    redirect, url_for, Blueprint)
 import urllib.request
 import json
@@ -75,12 +75,15 @@ def tambah_ormawa():
     data_send = request.form.to_dict()
     file = request.files['file']
     data_send['alamat_gambar'] = file.filename
-
-    requests.post(url, json=data_send)
-    file.save(os.path.join('static/images', file.filename))
-    print(dict)
-    print(request.form.to_dict())
-    return redirect(url_for('dashboard'))
+    if session['username'] == '':
+        print('login terlebih dahulu')
+        return redirect(url_for('auth.login'))
+    else:
+        requests.post(url, json=data_send)
+        file.save(os.path.join('static/images', file.filename))
+        print(dict)
+        print(request.form.to_dict())
+        return redirect(url_for('dashboard'))
 
 
 @ormawa.route('/hapus_ormawa/<int:id_ormawa>', methods=['POST'])

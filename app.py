@@ -25,8 +25,12 @@ application.register_blueprint(kegiatan)
 application.register_blueprint(galeri)
 application.register_blueprint(prestasi)
 
+<<<<<<< HEAD
 application.config.from_object(__name__)
 Session(application)
+=======
+#session['username'] = ''
+>>>>>>> master
 
 @application.route('/')
 @application.route('/index')
