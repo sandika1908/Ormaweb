@@ -5,6 +5,7 @@ import werkzeug
 import urllib.request
 import json
 from url import BASE_URL
+from flask.ext.session import Session
 
 from ormawa import ormawa
 from admin import admin
@@ -24,8 +25,8 @@ application.register_blueprint(kegiatan)
 application.register_blueprint(galeri)
 application.register_blueprint(prestasi)
 
-app.config.from_object(_name_)
-Session(app)
+application.config.from_object(__name__)
+Session(application)
 
 @application.route('/')
 @application.route('/index')
